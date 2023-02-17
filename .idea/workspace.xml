@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5ec5dd9-10c1-49bc-9ccb-be0aaa2b20fd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdgp_first/android/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdgp_first/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sdgp_first/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdgp_first/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sdgp_first/android/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +32,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/New Volume (G)/semester4/Sdgp/sdgp_first",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
