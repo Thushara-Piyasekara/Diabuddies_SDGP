@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
 
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  late String email;
+  late String password;
   @override
   Widget build(BuildContext context) {
     double w=MediaQuery.of(context).size.width;//the width of the screen
@@ -80,6 +86,9 @@ class SignupPage extends StatelessWidget {
                             ]
                         ),
                         child: TextFormField(
+                          onChanged:(value){
+                            email=value;
+                          },
                           decoration: InputDecoration(
                               prefixIcon: Icon(
                                 Icons.person,
@@ -122,6 +131,9 @@ class SignupPage extends StatelessWidget {
                             ]
                         ),
                         child: TextFormField(
+                          onChanged: (value){
+                            password=value;
+                          },
                           obscureText: true,
                           decoration: InputDecoration(
                               focusedBorder: OutlineInputBorder(
@@ -152,7 +164,10 @@ class SignupPage extends StatelessWidget {
                     children: [
                       SizedBox(height: 30,),
                       ElevatedButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            print(email);
+                            print(password);
+                          },
                           style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.zero,
                               shape: RoundedRectangleBorder(
@@ -200,11 +215,11 @@ class SignupPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Don't have an account? ",
+                            "Already have an account? ",
                             style: TextStyle(color: Colors.white),
                           ),
                           InkWell(
-                            child: Text("Sign up",style: TextStyle(color: Color.fromARGB(255, 87, 169, 182)),),
+                            child: Text("Sign in",style: TextStyle(color: Color.fromARGB(255, 87, 169, 182)),),
                             onTap: (){
 
                             },
