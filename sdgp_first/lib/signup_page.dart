@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:sdgp_first/home_page.dart';
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
 
@@ -7,6 +9,7 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  final _auth=FirebaseAuth.instance;
   late String email;
   late String password;
   @override
@@ -89,6 +92,7 @@ class _SignupPageState extends State<SignupPage> {
                           onChanged:(value){
                             email=value;
                           },
+                          keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                               prefixIcon: Icon(
                                 Icons.person,
@@ -164,9 +168,16 @@ class _SignupPageState extends State<SignupPage> {
                     children: [
                       SizedBox(height: 30,),
                       ElevatedButton(
-                          onPressed: (){
-                            print(email);
-                            print(password);
+                          onPressed: () async{
+                            try{
+                              final newUser=await _auth.createUserWithEmailAndPassword(email: email, password: password);
+                              if(newUser != null){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                                  // MaterialPageRoute, which is useful because it transitions to the new route using a platform-specific animation.
+                              }
+                            }catch(e){
+                              print(e);
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.zero,
