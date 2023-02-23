@@ -22,6 +22,8 @@ class _HomePageState extends State<HomePage> {
     final user=_auth2.currentUser;//it will null if anyone not signed in
     if(user!=null){
       print(user.email);
+    }else{
+      print("there is no email");
     }
   }
   @override

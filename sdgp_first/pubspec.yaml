@@ -39,6 +39,7 @@ dependencies:
   firebase_auth: ^4.2.8 #A Flutter plugin to use the Firebase Authentication API.
   firebase_core: ^2.6.1 #Core API, which enables connecting to multiple Firebase apps
   cloud_firestore: ^4.4.2
+  modal_progress_hud_nsn: ^0.3.0
 
 dev_dependencies:
   flutter_test:
