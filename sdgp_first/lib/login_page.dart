@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:sdgp_first/forgot_page.dart';
 import 'package:sdgp_first/signup_page.dart';
 
 import 'auth_services.dart';
@@ -257,8 +258,14 @@ class _LoginPageState extends State<LoginPage> {
                       margin: EdgeInsets.only(right: 20,top: 15),
                       alignment: Alignment.centerRight,
                       child:
-                      Text("forgot password?",
-                        style: TextStyle(color: Colors.white),)),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPasswordPage()));
+                        },
+                        focusColor: Color.fromARGB(255, 87, 169, 182),
+                        child: Text("forgot password?",
+                          style: TextStyle(color: Colors.white),),
+                      )),
                   Container(
                     child: Column(
                       children: [
