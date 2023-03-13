@@ -58,29 +58,21 @@ class _FirstMealPageState extends State<FirstMealPage> {
             ),
           ],
         ),
-        body: Stack(
+        body: ListView(
           children: [
-            const Positioned(
-              top: 0,
-              left: 0,
-              child: Text(
-                'Blood Glucose Level',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-            Center(
+            Container(
               child: Column(
                 children: [
+                  Text(
+                    'Blood Glucose Level',
+                    style: TextStyle(fontSize: 20),
+                  ),
                   Image.network(
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXTxXbJtRTJzcisw_L73_xlovINmbzDtcGEQ&usqp=CAU', // Replace with your image URL
                     width: 200,
                     height: 200,
                   ),
-                ],
-              ),
-            ),
-            Center(
-              child: ElevatedButton.icon(
+              ElevatedButton.icon(
                 onPressed: () {
                   // Handle predict button press
                 },
@@ -90,7 +82,7 @@ class _FirstMealPageState extends State<FirstMealPage> {
                 ),
                 icon: Icon(
                     Icons.camera,
-                  width
+                    width
                 ), // Use a network image instead of a local asset
                 label: const Text(
                   'Add Meal\n   Data',
@@ -98,7 +90,24 @@ class _FirstMealPageState extends State<FirstMealPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 33), // Add 16 pixels of vertical space
+            const SizedBox(height: 33),
+                ],
+              ),
+            ),
+            const Positioned(
+              top: 0,
+              left: 0,
+              child:
+            ),
+            Center(
+              child: Column(
+                children: [
+
+                ],
+              ),
+            ),
+            Center(
+              child:  // Add 16 pixels of vertical space
           ],
         ),
 
