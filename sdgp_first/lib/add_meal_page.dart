@@ -60,38 +60,45 @@ class _FirstMealPageState extends State<FirstMealPage> {
         ),
         body: ListView(
           children: [
-            Text(
-                'Blood Glucose Level',
-                style: TextStyle(fontSize: 20),
-              ),
-            Image.network(
+            Container(
+              child: Column(
+                children: [
+                  Text(
+                    'Blood Glucose Level',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Image.network(
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXTxXbJtRTJzcisw_L73_xlovINmbzDtcGEQ&usqp=CAU', // Replace with your image URL
                     width: 200,
                     height: 200,
-            ),
-            SizedBox(
-              height: 300,
-              width: 90,
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  // Handle predict button press
-                },
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.white),
-                  foregroundColor: MaterialStateProperty.all(Colors.green),
-                ),
-                icon: IconTheme(
-                  data: IconThemeData(size: 60,color: Colors.green),
-                  child: Icon(Icons.camera_alt_outlined),
+                  ),
+                  SizedBox(
+                    height: 150,
+                    width: 300,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        // Handle predict button press
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.white),
+                        foregroundColor: MaterialStateProperty.all(Colors.green),
+                      ),
+                      icon: IconTheme(
+                        data: IconThemeData(size: 60,color: Colors.green),
+                        child: Icon(Icons.camera_alt_outlined),
 
-                ), // Use a network image instead of a local asset
-                label: const Text(
-                  'Add Meal\n   Data',
-                  style: TextStyle(fontSize: 30),
-                ),
+                      ), // Use a network image instead of a local asset
+                      label: const Text(
+                        'Add Meal\n   Data',
+                        style: TextStyle(fontSize: 25),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 50,)
+                ],
               ),
             ),
-            SizedBox(height: 50,)
+
 
           ],
         ),
