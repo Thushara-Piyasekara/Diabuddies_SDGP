@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sdgp_first/login_page.dart';
+import 'package:sdgp_first/user_meal_page.dart';
 
 class FirstMealPage extends StatefulWidget {
   const FirstMealPage({Key? key}) : super(key: key);
@@ -41,7 +42,7 @@ class _FirstMealPageState extends State<FirstMealPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Patient info'),
+          title: const Text('Patient Information'),
           leading: IconButton(
             icon: const Icon(Icons.menu),
             onPressed: () {
@@ -53,52 +54,101 @@ class _FirstMealPageState extends State<FirstMealPage> {
               icon: const Icon(Icons.exit_to_app),
               onPressed: () {
                 _auth2.signOut();
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginPage()));
               },
             ),
           ],
         ),
-        body: Stack(
+        body: ListView(
           children: [
-            const Positioned(
-              top: 0,
-              left: 0,
-              child: Text(
-                'Blood Glucose Level',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-            Center(
+            Container(
               child: Column(
                 children: [
+                  const Text(
+                    'User Meal Details',
+                    style: TextStyle(fontSize: 25),
+                  ),
                   Image.network(
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXTxXbJtRTJzcisw_L73_xlovINmbzDtcGEQ&usqp=CAU', // Replace with your image URL
-                    width: 200,
-                    height: 200,
+                    width: 250,
+                    height: 250,
                   ),
+                  SizedBox(
+                    height: 100,
+                    width: 300,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        // Handle predict button press
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.white),
+                        foregroundColor: MaterialStateProperty.all(Colors.green),
+                      ),
+                      icon: const IconTheme(
+                        data: IconThemeData(size: 60,color: Colors.green),
+                        child: Icon(Icons.camera_alt_outlined),
+
+                      ), // Use a network image instead of a local asset
+                      label: const Text(
+                        'Add Meal Image',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    //g
+                    height: 100,
+                    width: 300,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>UserMeal()));
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.white),
+                        foregroundColor: MaterialStateProperty.all(Colors.green),
+                      ),
+                      icon: const IconTheme(
+                        data: IconThemeData(size: 60,color: Colors.green),
+                        child: Icon(Icons.fastfood_rounded),
+
+                      ), // Use a network image instead of a local asset
+                      label: const Text(
+                        'User Meal',
+                        style: TextStyle(fontSize: 25),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 10,),
+                  SizedBox(
+                    //g
+                    height: 100,
+                    width: 300,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>const UserMeal()));
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.white),
+                        foregroundColor: MaterialStateProperty.all(Colors.green),
+                      ),
+                      icon: const IconTheme(
+                        data: IconThemeData(size: 60,color: Colors.green),
+                        child: Icon(Icons.fastfood_outlined),
+
+                      ), // Use a network image instead of a local asset
+                      label: const Text(
+                        'Recommended Foods',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 40,)
                 ],
               ),
             ),
-            Center(
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  // Handle predict button press
-                },
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.white),
-                  foregroundColor: MaterialStateProperty.all(Colors.green),
-                ),
-                icon: Icon(
-                    Icons.camera,
-                  width
-                ), // Use a network image instead of a local asset
-                label: const Text(
-                  'Add Meal\n   Data',
-                  style: TextStyle(fontSize: 15),
-                ),
-              ),
-            ),
-            const SizedBox(height: 33), // Add 16 pixels of vertical space
           ],
         ),
 
