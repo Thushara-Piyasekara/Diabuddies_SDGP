@@ -58,48 +58,47 @@ class _FirstMealPageState extends State<FirstMealPage> {
             ),
           ],
         ),
-        body: ListView(
+        body: Stack(
           children: [
-
-            SizedBox(height: 50,),
-            Container(
+            const Positioned(
+              top: 0,
+              left: 0,
+              child: Text(
+                'Blood Glucose Level',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+            Center(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                      'Blood Glucose Level',
-                      style: TextStyle(fontSize: 20)
-                  ),
                   Image.network(
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXTxXbJtRTJzcisw_L73_xlovINmbzDtcGEQ&usqp=CAU', // Replace with your image URL
                     width: 200,
                     height: 200,
                   ),
-                  SizedBox(
-                    width: 300,
-                    height: 90,
-                    child: ElevatedButton.icon(
-                      onPressed: () {
-                        // Handle predict button press
-                      },
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.white),
-                        foregroundColor: MaterialStateProperty.all(Colors.green),
-                      ),
-                      icon: IconTheme(//here we use IconTheme instead of Icon its provide to change icon size and color with data:
-                        data: IconThemeData(size: 60, color: Colors.green),
-                        child: Icon(Icons.camera_alt_outlined),
-                      ), // Use a network image instead of a local asset
-                      label: const Text(
-                        'Add Meal\n   Data',
-                        style: TextStyle(fontSize: 25),
-                      ),
-
-                    ),
-                  ),
                 ],
               ),
-            ), // Add 16 pixels of vertical space
+            ),
+            Center(
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  // Handle predict button press
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  foregroundColor: MaterialStateProperty.all(Colors.green),
+                ),
+                icon: Icon(
+                    Icons.camera,
+                  width
+                ), // Use a network image instead of a local asset
+                label: const Text(
+                  'Add Meal\n   Data',
+                  style: TextStyle(fontSize: 15),
+                ),
+              ),
+            ),
+            const SizedBox(height: 33), // Add 16 pixels of vertical space
           ],
         ),
 
