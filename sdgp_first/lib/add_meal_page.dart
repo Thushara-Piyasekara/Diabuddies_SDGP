@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sdgp_first/login_page.dart';
+import 'package:sdgp_first/user_meal_page.dart';
 
 class FirstMealPage extends StatefulWidget {
   const FirstMealPage({Key? key}) : super(key: key);
@@ -90,6 +91,31 @@ class _FirstMealPageState extends State<FirstMealPage> {
                       ), // Use a network image instead of a local asset
                       label: const Text(
                         'Add Meal\n   Data',
+                        style: TextStyle(fontSize: 25),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    height: 150,
+                    width: 300,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>UserMeal()));
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.white),
+                        foregroundColor: MaterialStateProperty.all(Colors.green),
+                      ),
+                      icon: IconTheme(
+                        data: IconThemeData(size: 60,color: Colors.green),
+                        child: Icon(Icons.fastfood_rounded),
+
+                      ), // Use a network image instead of a local asset
+                      label: const Text(
+                        'User Meal',
                         style: TextStyle(fontSize: 25),
                       ),
                     ),
