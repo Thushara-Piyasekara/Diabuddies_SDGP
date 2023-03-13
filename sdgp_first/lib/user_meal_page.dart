@@ -9,6 +9,40 @@ class UserMeal extends StatefulWidget {
 }
 
 class _UserMealState extends State<UserMeal> {
+  TextEditingController meal1 = TextEditingController();
+  late String mealone;
+  TextEditingController meal2 = TextEditingController();
+  late String mealtwo;
+  TextEditingController meal3 = TextEditingController();
+  late String mealthree;
+  TextEditingController meal4 = TextEditingController();
+  late String mealfour;
+  TextEditingController meal5 = TextEditingController();
+  late String mealfive;
+  TextEditingController meal6 = TextEditingController();
+  late String mealsix;
+  TextEditingController meal7 = TextEditingController();
+  late String mealseven;
+  TextEditingController meal8 = TextEditingController();
+  late String mealeight;
+  TextEditingController mealA = TextEditingController();
+  late String mealAA;
+  TextEditingController mealB = TextEditingController();
+  late String mealBB;
+  TextEditingController mealC = TextEditingController();
+  late String mealCC;
+  TextEditingController mealD = TextEditingController();
+  late String mealDD;
+  TextEditingController mealE = TextEditingController();
+  late String mealEE;
+  TextEditingController mealF = TextEditingController();
+  late String mealFF;
+  TextEditingController mealG = TextEditingController();
+  late String mealGG;
+  TextEditingController mealH = TextEditingController();
+  late String mealHH;
+  final GlobalKey<FormState> formKey=GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,6 +157,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: meal1,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -148,6 +183,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: meal2,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -172,6 +208,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: meal3,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -194,6 +231,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: meal4,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -216,6 +254,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: meal5,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -238,6 +277,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: meal6,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -260,6 +300,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: meal7,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -282,6 +323,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                  controller: meal8,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -292,6 +334,7 @@ class _UserMealState extends State<UserMeal> {
                 onChanged: (text) {
                   // Handle text input changes
                 },
+
               ),
             ),
           ),
@@ -305,6 +348,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: mealC,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -328,6 +372,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: mealB,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -353,6 +398,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: mealA,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -375,6 +421,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: mealD,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -397,6 +444,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: mealE,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -419,6 +467,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: mealF,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -441,6 +490,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: mealG,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -463,6 +513,7 @@ class _UserMealState extends State<UserMeal> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: mealH,
                 decoration: InputDecoration(
                   // Add text to the label
                   border: OutlineInputBorder(
@@ -485,7 +536,56 @@ class _UserMealState extends State<UserMeal> {
             width: 120,
             child: ElevatedButton.icon(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (builder)=>UserMeal()));
+               formKey.currentState?.save();
+               print(meal1.text);
+               mealone=meal1.text;
+               print("meal_1 : "+ mealone);
+               print(meal2.text);
+               mealtwo=meal2.text;
+               print("meal_2 : "+ mealtwo);
+               print(meal3.text);
+               mealthree=meal3.text;
+               print("meal_3 : "+ mealfour);
+               print(meal4.text);
+               mealfour=meal4.text;
+               print("meal_4 : "+ mealfour);
+               print(meal5.text);
+               mealfive=meal5.text;
+               print("meal_5 : "+ mealfive);
+               print(meal6.text);
+               mealsix=meal6.text;
+               print("meal_6 : "+ mealsix);
+               print(meal7.text);
+               mealseven=meal7.text;
+               print("meal_7 : "+ mealseven);
+               print(meal8.text);
+               mealeight=meal8.text;
+               print("meal_8 : "+ mealeight);
+               print(mealA.text);
+               mealAA=mealA.text;
+               print("meal_1_Weight : "+ mealAA);
+               print(mealB.text);
+               mealBB=mealB.text;
+               print("meal_2_Weight : "+ mealBB);
+               print(mealC.text);
+               mealCC=mealC.text;
+               print("meal_3_Weight : "+ mealCC);
+               print(mealD.text);
+               mealDD=mealD.text;
+               print("meal_4_Weight : "+ mealDD);
+               print(mealE.text);
+               mealEE=mealE.text;
+               print("meal_5_Weight : "+ mealEE);
+               print(mealF.text);
+               mealFF=mealF.text;
+               print("meal_6_Weight : "+ mealFF);
+               print(mealG.text);
+               mealGG=mealG.text;
+               print("meal_7_Weight : "+ mealGG);
+               print(mealH.text);
+               mealHH=mealH.text;
+               print("meal_8_Weight : "+ mealHH);
+
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.white),
@@ -499,14 +599,10 @@ class _UserMealState extends State<UserMeal> {
               label: const Text(
                 'Enter',
                 style: TextStyle(fontSize: 20),
+
               ),
             ),
           ),)
-
-
-
-
-
         ],
       ),
     );
