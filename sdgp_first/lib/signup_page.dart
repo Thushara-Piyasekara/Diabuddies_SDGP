@@ -1,6 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:sdgp_first/add_meal_page.dart';
 import 'package:sdgp_first/auth_services.dart';
 import 'package:sdgp_first/home_page.dart';
 import 'package:sdgp_first/login_page.dart';
@@ -29,7 +30,7 @@ class _SignupPageState extends State<SignupPage> {
       try{
         final newUser=await _auth.createUserWithEmailAndPassword(email: emailController.text.trim(), password: passwordController.text.trim());
         if(newUser != null){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => FirstMealPage()));
           // MaterialPageRoute, which is useful because it transitions to the new route using a platform-specific animation.
         }
         setState(() {

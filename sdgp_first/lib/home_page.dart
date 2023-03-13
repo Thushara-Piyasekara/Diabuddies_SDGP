@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {//we are using authStateChanges bcs FireBaseauth.instance.currentUser doesnt availabe for immediately when sign in with google
       //but FireBaseauth.instance.currentUser fine when sign in using email and password instead of google sign in
       if (user != null) {
-        // User is signed in, you can access the user object via `currentUser` or `user` parameter.
+        // In this code User is signed in, you can access the user object via `currentUser` or `user` parameter.
         final user=_auth2.currentUser;//it will null if anyone not signed in
         print(user!.email);
         print('User is signed in!');

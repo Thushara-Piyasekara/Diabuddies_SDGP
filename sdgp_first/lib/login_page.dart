@@ -6,6 +6,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:sdgp_first/forgot_page.dart';
 import 'package:sdgp_first/signup_page.dart';
 
+import 'add_meal_page.dart';
 import 'auth_services.dart';
 import 'home_page.dart';
 
@@ -33,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
       try{
         final user=await _authe.signInWithEmailAndPassword(email: emailController.text.trim(), password: passwordController.text.trim());
         if(user!=null){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => FirstMealPage()));
         }
         setState(() {
           showSpinner=false;

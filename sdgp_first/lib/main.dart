@@ -5,6 +5,8 @@ import 'package:sdgp_first/home_page.dart';
 import 'package:sdgp_first/login_page.dart';
 import 'package:sdgp_first/signup_page.dart';
 
+import 'add_meal_page.dart';
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context,snapshot){
           if(snapshot.hasData){
-            return HomePage();
+            return FirstMealPage();
           }else{
             return LoginPage();
           }
