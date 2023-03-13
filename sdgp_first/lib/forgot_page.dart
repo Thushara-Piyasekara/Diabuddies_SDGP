@@ -40,8 +40,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             ),
           child: Column(
             children: [
-              SizedBox(height: 70,),
-              Text("\t\t\t Recieve an Email\n to reset your password",
+              const SizedBox(height: 70,),
+              const Text("\t\t\t Recieve an Email\n to reset your password",
                 style: TextStyle(color: Colors.white,fontSize: 20),
               ),
               SizedBox(height: 50,),
