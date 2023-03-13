@@ -60,19 +60,19 @@ class _FirstMealPageState extends State<FirstMealPage> {
         ),
         body: ListView(
           children: [
-            Container(
-              child: Column(
-                children: [
-                  Text(
-                    'Blood Glucose Level',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Image.network(
+            Text(
+                'Blood Glucose Level',
+                style: TextStyle(fontSize: 20),
+              ),
+            Image.network(
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXTxXbJtRTJzcisw_L73_xlovINmbzDtcGEQ&usqp=CAU', // Replace with your image URL
                     width: 200,
                     height: 200,
-                  ),
-              ElevatedButton.icon(
+            ),
+            SizedBox(
+              height: 300,
+              width: 90,
+              child: ElevatedButton.icon(
                 onPressed: () {
                   // Handle predict button press
                 },
@@ -80,34 +80,19 @@ class _FirstMealPageState extends State<FirstMealPage> {
                   backgroundColor: MaterialStateProperty.all(Colors.white),
                   foregroundColor: MaterialStateProperty.all(Colors.green),
                 ),
-                icon: Icon(
-                    Icons.camera,
-                    width
+                icon: IconTheme(
+                  data: IconThemeData(size: 60,color: Colors.green),
+                  child: Icon(Icons.camera_alt_outlined),
+
                 ), // Use a network image instead of a local asset
                 label: const Text(
                   'Add Meal\n   Data',
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(fontSize: 30),
                 ),
               ),
             ),
-            const SizedBox(height: 33),
-                ],
-              ),
-            ),
-            const Positioned(
-              top: 0,
-              left: 0,
-              child:
-            ),
-            Center(
-              child: Column(
-                children: [
+            SizedBox(height: 50,)
 
-                ],
-              ),
-            ),
-            Center(
-              child:  // Add 16 pixels of vertical space
           ],
         ),
 
