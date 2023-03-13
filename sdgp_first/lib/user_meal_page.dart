@@ -477,12 +477,12 @@ class _UserMealState extends State<UserMeal> {
             ),
           ),
           Positioned(
-            top:550,
-            left:280,
+            top:580,
+            left:250,
             child: SizedBox(
             //g
-            height: 50,
-            width: 50,
+            height: 60,
+            width: 120,
             child: ElevatedButton.icon(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (builder)=>UserMeal()));
@@ -491,22 +491,25 @@ class _UserMealState extends State<UserMeal> {
                 backgroundColor: MaterialStateProperty.all(Colors.white),
                 foregroundColor: MaterialStateProperty.all(Colors.green),
               ),
-              icon: IconTheme(
-                data: IconThemeData(size: 10,color: Colors.green),
+              icon: const IconTheme(
+                data: IconThemeData(size: 30,color: Colors.green),
                 child: Icon(Icons.fastfood_rounded),
 
               ), // Use a network image instead of a local asset
               label: const Text(
-                'User ppoos',
-                style: TextStyle(fontSize: 25),
+                'Enter',
+                style: TextStyle(fontSize: 20),
               ),
             ),
           ),)
 
 
 
+
+
         ],
       ),
     );
+
   }
 }
