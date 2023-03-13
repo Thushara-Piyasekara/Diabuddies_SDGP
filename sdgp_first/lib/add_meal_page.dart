@@ -58,17 +58,16 @@ class _FirstMealPageState extends State<FirstMealPage> {
             ),
           ],
         ),
-        body: Stack(
+        body: ListView(
           children: [
-            const Positioned(
-              top: 0,
-              left: 0,
+            Container(
               child: Text(
                 'Blood Glucose Level',
                 style: TextStyle(fontSize: 20),
               ),
             ),
-            Center(
+            SizedBox(height: 50,),
+            Container(
               child: Column(
                 children: [
                   Image.network(
@@ -79,7 +78,7 @@ class _FirstMealPageState extends State<FirstMealPage> {
                 ],
               ),
             ),
-            Center(
+            Container(
               child: ElevatedButton.icon(
                 onPressed: () {
                   // Handle predict button press
@@ -90,7 +89,6 @@ class _FirstMealPageState extends State<FirstMealPage> {
                 ),
                 icon: Icon(
                     Icons.camera,
-                  width
                 ), // Use a network image instead of a local asset
                 label: const Text(
                   'Add Meal\n   Data',
