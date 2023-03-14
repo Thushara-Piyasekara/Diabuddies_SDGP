@@ -14,29 +14,51 @@ class _FoodRecPageState extends State<FoodRecPage> {
       appBar: AppBar(
         title: const Text('Meal Information'),
       ),
-      body: const Center(
-        child: Text('Recommended Foods'),
-      ),
-    );
-
-
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Image Demo'),
-        ),
-        body: Center(
-          child: Column(
+      body: Center(
+          child: Stack(
             children: <Widget>[
-              Image.asset('assets/tablet.png'),
-              const Text(
-                'A tablet is a wireless touch screen computer that is smaller than a notebook but larger than a smartphone.',
-                style: TextStyle(fontSize: 20.0),
+              Container(
+                child: Column(
+                  children: [
+                    const Text(
+                    'Recommended Foods', style: TextStyle(fontSize: 25),
+                     ),
+                    Positioned(
+                    top: 100, // Position from top of the screen
+                    left: 20, // Position from left of the screen
+                     child: Image.network(
+                      'https://picsum.photos/250?image=9',
+                      height: 200, // Set the height of the image
+                      width: 150, // Set the width of the image
+                      ),
+                    ),
+
+                    Positioned(
+                      top: 100,
+                      left: 320,
+                      child: Image.network(
+                        '',
+                        height: 200,
+                        width: 150,
+                      ),
+                    ),
+
+                    Positioned(
+                      top: 500,
+                      right: 20,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('See All'),
+                      ),
+                    ),
+                  ]
               )
+              )
+              // Add other widgets as needed
             ],
           ),
         ),
-      ),
     );
+
   }
 }
