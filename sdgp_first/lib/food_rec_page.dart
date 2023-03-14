@@ -28,8 +28,8 @@ class _FoodRecPageState extends State<FoodRecPage> {
                     left: 20, // Position from left of the screen
                      child: Image.network(
                       'https://picsum.photos/250?image=9',
-                      height: 200, // Set the height of the image
-                      width: 150, // Set the width of the image
+                      height: 300, // Set the height of the image
+                      width: 250, // Set the width of the image
                       ),
                     ),
 
@@ -37,9 +37,9 @@ class _FoodRecPageState extends State<FoodRecPage> {
                       top: 100,
                       left: 320,
                       child: Image.network(
-                        '',
-                        height: 200,
-                        width: 150,
+                        'https://www.wicklowpartnership.ie/wp-content/uploads/2013/06/Healthy-Foods-1600x800.jpeg',
+                        height: 300,
+                        width: 250,
                       ),
                     ),
 
