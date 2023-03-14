@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:sdgp_first/image_page.dart';
 import 'package:sdgp_first/login_page.dart';
 import 'package:sdgp_first/user_meal_page.dart';
 
@@ -78,7 +79,7 @@ class _FirstMealPageState extends State<FirstMealPage> {
                     width: 300,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        // Handle predict button press
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>ImageChoosePage()));
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.white),
