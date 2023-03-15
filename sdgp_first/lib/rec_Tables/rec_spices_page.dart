@@ -15,51 +15,82 @@ class _RecSpicesPageState extends State<RecSpicesPage> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: const Text('Flutter DataTable Example'),
+            title: const Text('Spices & Herbs'),
           ),
           body: ListView(children: <Widget>[
             const Center(
                 child: Text(
-                  'People-Chart',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  'You Must Include In Your Diabetes Diet',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 )),
             DataTable(
               columns: const [
-                DataColumn(label: Text(
-                    'ID',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
-                )),
                 DataColumn(label: Text(
                     'Name',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
                 )),
                 DataColumn(label: Text(
-                    'Profession',
+                    'Nutrients',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
                 )),
+
               ],
               rows: const [
                 DataRow(cells: [
-                  DataCell(Text('1')),
-                  DataCell(Text('Stephen')),
-                  DataCell(Text('Actor')),
+                  DataCell(Text('Cinnamon')),
+                  DataCell(Text('Reduce blood sugar, insulin resistance, and hemoglobin A1c, and may aid weight loss by lowering cholesterol and speeding up metabolism.')),
+
                 ]),
                 DataRow(cells: [
-                  DataCell(Text('5')),
-                  DataCell(Text('John')),
-                  DataCell(Text('Student')),
+                  DataCell(Text('Turmeric')),
+                  DataCell(Text('Anti-inflammatory, anti-aging, antioxidant, neuroprotective, anti-atherosclerotic, heart-protecting, weight-reducing, and anti-infectious properties.')),
+
                 ]),
                 DataRow(cells: [
-                  DataCell(Text('10')),
-                  DataCell(Text('Harry')),
-                  DataCell(Text('Leader')),
+                  DataCell(Text('Fenugreek')),
+                  DataCell(Text('thiamine, riboflavin, vitamin B6, iron, magnesium, phosphorus, potassium, copper, manganese')),
+
                 ]),
                 DataRow(cells: [
-                  DataCell(Text('15')),
-                  DataCell(Text('Peter')),
-                  DataCell(Text('Scientist')),
+                  DataCell(Text('Ginger')),
+                  DataCell(Text('potassium')),
+
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Garlic')),
+                  DataCell(Text('vitamin C, vitamin B6, manganese, selenium')),
+
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Tamarind')),
+                  DataCell(Text('thiamine, magnesium')),
+
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Rosemary')),
+                  DataCell(Text('Effective heart tonic and antioxidant, and can be used in cooking and tea.')),
+
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Bilberry')),
+                  DataCell(Text('Their blue color and anthocyanins, which reduce inflammation and improve glucose tolerance.')),
+
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Cumin')),
+                  DataCell(Text('Cumin lowers blood sugar and cholesterol, and has a beneficial effect on advanced gly cation end products ')),
+
                 ]),
               ],
+            ),
+            Positioned(
+              top: 520, // Position from top of the screen
+              left: 20, // Position from left of the screen
+              child: Image.network(
+                'https://cdn.shopify.com/s/files/1/1695/6563/articles/ever-wonder-what-to-do-with-your-extra-spices-and-herbs_2048x.jpg?v=1503383599',
+                height: 100, // Set the height of the image
+                width: 100, // Set the width of the image
+              ),
             ),
             Positioned(
               top: 620,

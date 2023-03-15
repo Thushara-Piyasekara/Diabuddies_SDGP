@@ -17,51 +17,72 @@ class _RecFruitPageState extends State<RecFruitPage> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: const Text('Flutter DataTable Example'),
+            title: const Text('Fruits'),
           ),
           body: ListView(children: <Widget>[
             const Center(
                 child: Text(
-                  'People-Chart',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  'You Must Include In Your Diabetes Diet',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 )),
             DataTable(
               columns: const [
-                DataColumn(label: Text(
-                    'ID',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
-                )),
                 DataColumn(label: Text(
                     'Name',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
                 )),
                 DataColumn(label: Text(
-                    'Profession',
+                    'Nutrients',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
                 )),
               ],
               rows: const [
                 DataRow(cells: [
-                  DataCell(Text('1')),
-                  DataCell(Text('Stephen')),
-                  DataCell(Text('Actor')),
+                  DataCell(Text('Blueberries')),
+                  DataCell(Text('vitamin K')),
                 ]),
                 DataRow(cells: [
-                  DataCell(Text('5')),
-                  DataCell(Text('John')),
-                  DataCell(Text('Student')),
+                  DataCell(Text('Pomegranate')),
+                  DataCell(Text('	vitamin K')),
                 ]),
                 DataRow(cells: [
-                  DataCell(Text('10')),
-                  DataCell(Text('Harry')),
-                  DataCell(Text('Leader')),
+                  DataCell(Text('Green Kiwi')),
+                  DataCell(Text('vitamin C, vitamin K')),
                 ]),
                 DataRow(cells: [
-                  DataCell(Text('15')),
-                  DataCell(Text('Peter')),
-                  DataCell(Text('Scientist')),
+                  DataCell(Text('Passion Fruit')),
+                  DataCell(Text('vitamin C, vitamin A')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Surinam Cherry')),
+                  DataCell(Text('vitamin C, vitamin A')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Durian')),
+                  DataCell(Text('vitamin C, thiamine')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Guava')),
+                  DataCell(Text('vitamin C, thiamine')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Grape')),
+                  DataCell(Text('Copper')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Florida Avocado')),
+                  DataCell(Text('vitamin C')),
                 ]),
               ],
+            ),
+            Positioned(
+              top: 520, // Position from top of the screen
+              left: 20, // Position from left of the screen
+              child: Image.network(
+                'https://studyfinds.org/wp-content/uploads/2021/06/pexels-jane-d-1132047.jpg',
+                height: 100, // Set the height of the image
+                width: 100, // Set the width of the image
+              ),
             ),
             Positioned(
               top: 620,
