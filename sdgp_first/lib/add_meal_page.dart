@@ -84,10 +84,10 @@ class _FirstMealPageState extends State<FirstMealPage> {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.white),
-                        foregroundColor: MaterialStateProperty.all(Colors.green),
+                        foregroundColor: MaterialStateProperty.all(Colors.lightBlue),
                       ),
                       icon: const IconTheme(
-                        data: IconThemeData(size: 60,color: Colors.green),
+                        data: IconThemeData(size: 60,color: Colors.lightBlue),
                         child: Icon(Icons.camera_alt_outlined),
 
                       ), // Use a network image instead of a local asset
@@ -110,10 +110,10 @@ class _FirstMealPageState extends State<FirstMealPage> {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.white),
-                        foregroundColor: MaterialStateProperty.all(Colors.green),
+                        foregroundColor: MaterialStateProperty.all(Colors.lightBlue),
                       ),
                       icon: const IconTheme(
-                        data: IconThemeData(size: 60,color: Colors.green),
+                        data: IconThemeData(size: 60,color: Colors.lightBlue),
                         child: Icon(Icons.fastfood_rounded),
 
                       ), // Use a network image instead of a local asset
@@ -134,10 +134,10 @@ class _FirstMealPageState extends State<FirstMealPage> {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.white),
-                        foregroundColor: MaterialStateProperty.all(Colors.green),
+                        foregroundColor: MaterialStateProperty.all(Colors.lightBlue),
                       ),
                       icon: const IconTheme(
-                        data: IconThemeData(size: 60,color: Colors.green),
+                        data: IconThemeData(size: 60,color: Colors.lightBlue),
                         child: Icon(Icons.fastfood_outlined),
 
                       ), // Use a network image instead of a local asset
@@ -154,25 +154,31 @@ class _FirstMealPageState extends State<FirstMealPage> {
           ],
         ),
 
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.green,
-          backgroundColor: const Color.fromARGB(255, 12, 119, 55),
-          onTap: (index) {},
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.heart_broken_sharp),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: '',
-            ),
-          ],
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Colors.lightBlue,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Patient Info',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.schedule),
+            label: 'Schedule',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.receipt),
+            label: 'Report',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Notifications',
+          ),
+        ],
+      ),
     );
   }
 
