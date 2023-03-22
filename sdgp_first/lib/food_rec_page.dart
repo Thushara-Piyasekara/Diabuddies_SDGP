@@ -154,7 +154,7 @@ class _FoodRecPageState extends State<FoodRecPage> {
                 right: 20,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>const FirstMealPage()));
+                    Navigator.pop(context, MaterialPageRoute(builder: (builder)=>const FirstMealPage()));
                   },
                   child: const Text('Back'),
                 ),
