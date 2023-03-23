@@ -2,8 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sdgp_first/image_page.dart';
 import 'package:sdgp_first/login_page.dart';
-import 'package:sdgp_first/user_meal_page.dart';
 import 'package:sdgp_first/food_rec_page.dart';
+
+import 'form_group/CustomFormField.dart';
 
 class FirstMealPage extends StatefulWidget {
   const FirstMealPage({Key? key}) : super(key: key);
@@ -17,12 +18,13 @@ class _FirstMealPageState extends State<FirstMealPage> {
 
   @override
   void initState() {
+    super.initState();
     // TODO: implement initState
     getCurrentUser();
   }
   void getCurrentUser() {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {//we are using authStateChanges bcs FireBaseauth.instance.currentUser doesnt availabe for immediately when sign in with google
-      //but FireBaseauth.instance.currentUser fine when sign in using email and password instead of google sign in
+      //but FireBase-auth.instance.currentUser fine when sign in using email and password instead of google sign in
       if (user != null) {
         // In this code User is signed in, you can access the user object via `currentUser` or `user` parameter.
         final user=_auth2.currentUser;//it will null if anyone not signed in
@@ -80,7 +82,7 @@ class _FirstMealPageState extends State<FirstMealPage> {
                     width: 300,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>ImageChoosePage()));
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>const ImageChoosePage()));
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.white),
@@ -106,7 +108,7 @@ class _FirstMealPageState extends State<FirstMealPage> {
                     width: 300,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>UserMeal()));
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>const CusMealPage()));
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.white),
@@ -155,7 +157,7 @@ class _FirstMealPageState extends State<FirstMealPage> {
         ),
 
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

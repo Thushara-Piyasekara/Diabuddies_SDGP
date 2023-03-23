@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sdgp_first/food_rec_page.dart';
 
@@ -89,7 +88,7 @@ class _RecFruitPageState extends State<RecFruitPage> {
               right: 20,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (builder)=>const FoodRecPage()));
+                  Navigator.pop(context, MaterialPageRoute(builder: (builder)=>const FoodRecPage()));
                 },
                 child: const Text('Back'),
               ),
