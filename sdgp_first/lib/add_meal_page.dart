@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sdgp_first/image_page.dart';
 import 'package:sdgp_first/login_page.dart';
 import 'package:sdgp_first/food_rec_page.dart';
+import 'package:sdgp_first/user_meal_page.dart';
 
 import 'form_group/CustomFormField.dart';
 
@@ -108,7 +109,7 @@ class _FirstMealPageState extends State<FirstMealPage> {
                     width: 300,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>const CusMealPage()));
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=> const UserMeal()));
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.white),
@@ -132,7 +133,7 @@ class _FirstMealPageState extends State<FirstMealPage> {
                     width: 300,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>const FoodRecPage()));
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=> const FoodRecPage()));
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.white),

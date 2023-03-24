@@ -1,22 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-class CusMealPage extends StatefulWidget {
-  const CusMealPage({Key? key}) : super(key: key);
-
-  @override
-  State<CusMealPage> createState() => _CusMealPageState();
-}
-
-class _CusMealPageState extends State<CusMealPage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
-
-
 TextEditingController meal1 = TextEditingController();
 late String meal_1;
 TextEditingController weight1 = TextEditingController();
@@ -43,19 +27,31 @@ TextEditingController weight6 = TextEditingController();
 late String weight_6;
 TextEditingController meal7 = TextEditingController();
 late String meal_7;
+TextEditingController weight7 = TextEditingController();
+late String weight_7;
+TextEditingController meal8 = TextEditingController();
+late String meal_8;
 TextEditingController weight8 = TextEditingController();
 late String weight_8;
-TextEditingController gluLvl = TextEditingController();
+
+TextEditingController unit_1 = TextEditingController();
 late String glucose;
 
 final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
 List<String> _mealUnits = ['g', 'ml'];
-String _selectedMealUnits = 'g';
+String _selectedMealUnits_1 = 'g';
+String _selectedMealUnits_2 = 'g';
+String _selectedMealUnits_3 = 'g';
+String _selectedMealUnits_4 = 'g';
+String _selectedMealUnits_5 = 'g';
+String _selectedMealUnits_6 = 'g';
+String _selectedMealUnits_7 = 'g';
+String _selectedMealUnits_8 = 'g';
 
-Container customFormField1(BuildContext context){
+Container customFormField1(){
   return Container(
-    height: 200,
+    height: 120,
     child: Row(
       children: [
         Expanded(
@@ -64,14 +60,14 @@ Container customFormField1(BuildContext context){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Meal',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: meal1,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -94,14 +90,14 @@ Container customFormField1(BuildContext context){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Weight',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: weight1,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -124,12 +120,12 @@ Container customFormField1(BuildContext context){
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('Unit ',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: 80,
                   child: DropdownButtonFormField<String>(
-                    value: _selectedMealUnits,
+                    value: _selectedMealUnits_1,
                     items: _mealUnits.map((String mealType) {
                       return DropdownMenuItem<String>(
                         value: mealType,
@@ -137,7 +133,7 @@ Container customFormField1(BuildContext context){
                       );
                     }).toList(),
                     onChanged: (String? value) {
-                      _selectedMealUnits = value!;
+                      _selectedMealUnits_1 = value!;
                     },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -147,30 +143,6 @@ Container customFormField1(BuildContext context){
                     ),
                   ),
                 ),
-                /*SizedBox(
-                  //g
-                  height: 100,
-                  width: 300,
-                  child: ElevatedButton.icon(
-                    onPressed: () {
-
-                      Navigator.pop(context, MaterialPageRoute(builder: (builder)=>const FirstMealPage()));
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                      foregroundColor: MaterialStateProperty.all(Colors.lightBlue),
-                    ),
-                    icon: const IconTheme(
-                      data: IconThemeData(size: 60,color: Colors.lightBlue),
-                      child: Icon(Icons.fastfood_rounded),
-
-                    ), // Use a network image instead of a local asset
-                    label: const Text(
-                      'Back',
-                      style: TextStyle(fontSize: 25),
-                    ),
-                  ),
-                ),*/
               ],
             ))
       ],
@@ -188,14 +160,14 @@ Container customFormField2(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Meal',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: meal2,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -218,14 +190,14 @@ Container customFormField2(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Weight',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: weight2,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -248,12 +220,12 @@ Container customFormField2(){
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('Unit ',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: 80,
                   child: DropdownButtonFormField<String>(
-                    value: _selectedMealUnits,
+                    value: _selectedMealUnits_2,
                     items: _mealUnits.map((String mealType) {
                       return DropdownMenuItem<String>(
                         value: mealType,
@@ -261,7 +233,7 @@ Container customFormField2(){
                       );
                     }).toList(),
                     onChanged: (String? value) {
-                      _selectedMealUnits = value!;
+                      _selectedMealUnits_2 = value!;
                     },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -279,7 +251,7 @@ Container customFormField2(){
 }
 Container customFormField3(){
   return Container(
-    height: 200,
+    height: 120,
     child: Row(
       children: [
         Expanded(
@@ -288,14 +260,14 @@ Container customFormField3(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Meal',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: meal3,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -318,14 +290,14 @@ Container customFormField3(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Weight',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: weight3,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -348,12 +320,12 @@ Container customFormField3(){
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('Unit ',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: 80,
                   child: DropdownButtonFormField<String>(
-                    value: _selectedMealUnits,
+                    value: _selectedMealUnits_3,
                     items: _mealUnits.map((String mealType) {
                       return DropdownMenuItem<String>(
                         value: mealType,
@@ -361,7 +333,7 @@ Container customFormField3(){
                       );
                     }).toList(),
                     onChanged: (String? value) {
-                      _selectedMealUnits = value!;
+                      _selectedMealUnits_3 = value!;
                     },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -371,6 +343,7 @@ Container customFormField3(){
                     ),
                   ),
                 ),
+
               ],
             ))
       ],
@@ -388,14 +361,14 @@ Container customFormField4(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Meal',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: meal4,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -418,114 +391,14 @@ Container customFormField4(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Weight',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
-                  decoration: InputDecoration(
-                    // Add text to the label
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0), // Add a border radius
-                      borderSide: const BorderSide(color: Colors.grey, width: 1.0), // Add a border color and width
-                    ),
-                  ),
-                  onChanged: (text) {
-                    // Handle text input changes
-                  },
-
-                ),
-              ),
-            ],
-          ),
-        ),
-        Expanded(
-            flex: 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text('Unit',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: 80,
-                  child: DropdownButtonFormField<String>(
-                    value: _selectedMealUnits,
-                    items: _mealUnits.map((String mealType) {
-                      return DropdownMenuItem<String>(
-                        value: mealType,
-                        child: Text(mealType),
-                      );
-                    }).toList(),
-                    onChanged: (String? value) {
-                      _selectedMealUnits = value!;
-                    },
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      //labelText: 'Select a meal unit',
-                    ),
-                  ),
-                ),
-              ],
-            ))
-      ],
-    ),
-  );
-}
-Container customFormField5(){
-  return Container(
-    height: 200,
-    child: Row(
-      children: [
-        Expanded(
-          flex: 3,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('Meal',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-              Container(
-                width: 180,
-                height: 60,
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: TextField(
-                  controller: gluLvl,
-                  decoration: InputDecoration(
-                    // Add text to the label
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0), // Add a border radius
-                      borderSide: const BorderSide(color: Colors.grey, width: 1.0), // Add a border color and width
-                    ),
-                  ),
-                  onChanged: (text) {
-                    // Handle text input changes
-                  },
-
-                ),
-              ),
-            ],
-          ),
-        ),
-        Expanded(
-          flex: 2,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('Weight',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-              Container(
-                width: 180,
-                height: 60,
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                child: TextField(
-                  controller: gluLvl,
+                  controller: weight4,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -548,12 +421,12 @@ Container customFormField5(){
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('Unit ',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: 80,
                   child: DropdownButtonFormField<String>(
-                    value: _selectedMealUnits,
+                    value: _selectedMealUnits_4,
                     items: _mealUnits.map((String mealType) {
                       return DropdownMenuItem<String>(
                         value: mealType,
@@ -561,7 +434,108 @@ Container customFormField5(){
                       );
                     }).toList(),
                     onChanged: (String? value) {
-                      _selectedMealUnits = value!;
+                      _selectedMealUnits_4 = value!;
+                    },
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      //labelText: 'Select a meal unit',
+                    ),
+                  ),
+                ),
+              ],
+            ))
+      ],
+    ),
+  );
+}
+Container customFormField5(){
+  return Container(
+    height: 120,
+    color: Colors.grey.shade300,
+    child: Row(
+      children: [
+        Expanded(
+          flex: 3,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Meal',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+              Container(
+                width: 180,
+                height: 60,
+                margin: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
+                child: TextField(
+                  controller: meal5,
+                  decoration: InputDecoration(
+                    // Add text to the label
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0), // Add a border radius
+                      borderSide: const BorderSide(color: Colors.grey, width: 1.0), // Add a border color and width
+                    ),
+                  ),
+                  onChanged: (text) {
+                    // Handle text input changes
+                  },
+
+                ),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 2,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Weight',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+              Container(
+                width: 180,
+                height: 60,
+                margin: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
+                child: TextField(
+                  controller: weight5,
+                  decoration: InputDecoration(
+                    // Add text to the label
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0), // Add a border radius
+                      borderSide: const BorderSide(color: Colors.grey, width: 1.0), // Add a border color and width
+                    ),
+                  ),
+                  onChanged: (text) {
+                    // Handle text input changes
+                  },
+
+                ),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+            flex: 2,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('Unit ',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  width: 80,
+                  child: DropdownButtonFormField<String>(
+                    value: _selectedMealUnits_5,
+                    items: _mealUnits.map((String mealType) {
+                      return DropdownMenuItem<String>(
+                        value: mealType,
+                        child: Text(mealType),
+                      );
+                    }).toList(),
+                    onChanged: (String? value) {
+                      _selectedMealUnits_5 = value!;
                     },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -588,14 +562,14 @@ Container customFormField6(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Meal',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: meal6,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -618,14 +592,14 @@ Container customFormField6(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Weight',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: weight6,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -648,12 +622,12 @@ Container customFormField6(){
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('Unit ',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: 80,
                   child: DropdownButtonFormField<String>(
-                    value: _selectedMealUnits,
+                    value: _selectedMealUnits_6,
                     items: _mealUnits.map((String mealType) {
                       return DropdownMenuItem<String>(
                         value: mealType,
@@ -661,7 +635,7 @@ Container customFormField6(){
                       );
                     }).toList(),
                     onChanged: (String? value) {
-                      _selectedMealUnits = value!;
+                      _selectedMealUnits_6 = value!;
                     },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -679,7 +653,8 @@ Container customFormField6(){
 }
 Container customFormField7(){
   return Container(
-    height: 200,
+    height: 120,
+    color: Colors.grey.shade300,
     child: Row(
       children: [
         Expanded(
@@ -688,14 +663,14 @@ Container customFormField7(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Meal',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: meal7,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -718,14 +693,14 @@ Container customFormField7(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Weight',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: weight7,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -747,13 +722,13 @@ Container customFormField7(){
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Unit',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                const Text('Unit ',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: 80,
                   child: DropdownButtonFormField<String>(
-                    value: _selectedMealUnits,
+                    value: _selectedMealUnits_7,
                     items: _mealUnits.map((String mealType) {
                       return DropdownMenuItem<String>(
                         value: mealType,
@@ -761,7 +736,7 @@ Container customFormField7(){
                       );
                     }).toList(),
                     onChanged: (String? value) {
-                      _selectedMealUnits = value!;
+                      _selectedMealUnits_7 = value!;
                     },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -771,6 +746,7 @@ Container customFormField7(){
                     ),
                   ),
                 ),
+
               ],
             ))
       ],
@@ -788,14 +764,14 @@ Container customFormField8(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Meal',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: meal8,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -818,14 +794,14 @@ Container customFormField8(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Weight',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               Container(
                 width: 180,
                 height: 60,
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 child: TextField(
-                  controller: gluLvl,
+                  controller: weight8,
                   decoration: InputDecoration(
                     // Add text to the label
                     border: OutlineInputBorder(
@@ -847,13 +823,13 @@ Container customFormField8(){
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Unit',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                const Text('Unit ',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: 80,
                   child: DropdownButtonFormField<String>(
-                    value: _selectedMealUnits,
+                    value: _selectedMealUnits_8,
                     items: _mealUnits.map((String mealType) {
                       return DropdownMenuItem<String>(
                         value: mealType,
@@ -861,7 +837,7 @@ Container customFormField8(){
                       );
                     }).toList(),
                     onChanged: (String? value) {
-                      _selectedMealUnits = value!;
+                      _selectedMealUnits_8 = value!;
                     },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
