@@ -5,7 +5,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:sdgp_first/forgot_page.dart';
 import 'package:sdgp_first/signup_page.dart';
-
 import 'add_meal_page.dart';
 import 'auth_services.dart';
 import 'home_page.dart';
